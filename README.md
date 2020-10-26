@@ -8,7 +8,7 @@ Dependencies:
 * basic utilities included in the vast majority of GNU/Linux distributions such as ```grep```
 
 
-## Disclaimer: This project is **NOT** affiliated with Hypixel.
+## This project is **NOT** affiliated with Hypixel.
 ## NOTE: this is meant to be used by the user hosting it, and offers no functionality for usage by other users, or adding users by messaging. the bot
 
 ## Guide:
