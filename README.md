@@ -13,10 +13,11 @@ Dependencies:
 
 ## Guide:
 
-Fill out the variables located toward the top of the shell script, a Hypixel api key is required
-
+Change the variables near the top of the shell script (ex. ```key='HYPIXEL-API-KEY-GOES-HERE```)
 * to obtain a Hypixel API key, please login ingame and run the command /key.
 
 Obtaining the Telegram API key, instructions can be found on [https://core.telegram.org/bots](https://core.telegram.org/bots)
 
 Once the API key for the bot has been obtained, you must send the bot a message and figure out the chat ID. This can usually be obtained by going to https://api.telegram.org/bot<API-KEY>/getUpdates and finding the chat id section of the json for the message you previously sent to the bot.
+
+Then figure out the uuid of the player this can be done most easily with (NameMC)[https://namemc.com], replace
