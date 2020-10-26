@@ -8,5 +8,5 @@ Dependencies:
 * Bash
 * command-line cURL
 
-## NOTE: this is meant to be used by the user hosting it, and offers no functionality for usage by other users, or adding users by messaging.
+## NOTE: this is meant to be used by the user hosting it, and offers no functionality for usage by other users, or adding users by messaging. the bot
 
