@@ -1,6 +1,6 @@
 # Hypixel online telegram bot
 
-This is a Telegram bot shell script that using the Hypixel api to send one a message when a player goes online.
+This is a Telegram bot shell script that using the Hypixel api to send a message when a specified player joins the Hypixel Minecraft server.
 
 Dependencies:
 * Bash
