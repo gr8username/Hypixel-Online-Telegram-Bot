@@ -22,3 +22,9 @@ Once the API key for the bot has been obtained, you must send the bot a message 
 
 Then figure out the uuid of the player this can be done most easily with (NameMC)[https://namemc.com], remove any ```-``` ( it should look something like this ```069a79f444e94726a5befca90e38aaf5```) from the uuid, and then then change ```uuid=```.
 
+This repository is avaliabe on both GitHub and GitLab.
+
+[https://github.com/gr8username/Hypixel-Online-Telegram-Bot](https://github.com/gr8username/Hypixel-Online-Telegram-Bot)
+
+[https://gitlab.com/Really-Random-User/hypixel-online-telegram-bot](https://gitlab.com/Really-Random-User/hypixel-online-telegram-bot)
+
