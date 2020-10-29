@@ -12,6 +12,7 @@ Dependencies:
 ## NOTE: this is meant to be used by the user hosting it, and offers no functionality for usage by other users, or adding users by messaging. the bot
 
 ## Guide:
+* Download the OnlineBot.sh file from the repository.
 
 Change the variables near the top of the shell script (ex. ```key='HYPIXEL-API-KEY-GOES-HERE```)
 * to obtain a Hypixel API key, please login ingame and run the command /key.
