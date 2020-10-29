@@ -9,7 +9,7 @@ Dependencies:
 
 
 ## This project is **NOT** affiliated with Hypixel.
-## NOTE: this is meant to be used by the user hosting it, and offers no functionality for usage by other users, or adding users by messaging. the bot
+## NOTE: this is meant to be used by the user hosting it, and offers no functionality for usage by other users, or adding users by messaging.
 
 ## Guide:
 * Download the OnlineBot.sh file from the repository.
