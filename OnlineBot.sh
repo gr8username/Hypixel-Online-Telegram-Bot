@@ -5,6 +5,7 @@ playerName='player'
 key='HYPIXEL-API-KEY-GOES-HERE'
 TGbotAPIkey='YOUR-TELEGRAM-API-KEY-GOES-HERE'
 TGbotChannel='123456'
+echo press ctrl+c to quit
 while true
 do
 	runCheck=$( curl https://api.hypixel.net/status?key="$key"\&uuid="$uuid" )
