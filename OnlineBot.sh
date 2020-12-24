@@ -1,15 +1,25 @@
 #!/bin/bash
-uuid='MINECRAFT-UUID-OF-PLAYER-YOU-WISH-TO-RECIEVE-NOTIFICATIONS-WHILE-ONLINE'
+uuid='UUID-OF-PLAYER'
+# the uuid of the player, this setting is ignored if userUsername=true.
 playerName='player'
-# this should contain the player that you wish to recieve notifications while online, THE ONLY EFFECT THIS HAS IS WHAT THE TELEGRAM MESSAGE SAYS, HAS NO EFFECT ON WHICH PLAYER IS CHECKED
+# if userUsername=true, please fill in this option, and ignore uuid=
 key='HYPIXEL-API-KEY-GOES-HERE'
-TGbotAPIkey='YOUR-TELEGRAM-API-KEY-GOES-HERE'
-TGbotChannel='123456'
-echo press ctrl+c to quit
+TGbotAPIkey='TELEGRAM-API-KEY-GOES-HERE'
+TGbotChannel='CHANNEL-NUMBER-OF-TELEGRAM-CHAT'
+# fill in these options
+useUsername=true
+# The above option determines whether the script will get the uuid based upon the username of the "playerName" variable,
+# this will save you the trouble of filling in a uuid, but might also cause problems if a player changes their name.
+if [ $useUsername = true ]
+then
+	# gets the uuid of the player from mojang's API.
+	uuid=$( curl https://api.mojang.com/users/profiles/minecraft/"$playerName"?at=0 | grep -o "\"id\":\"[a-z0-9]*\"" | grep -o "\"[a-z0-9]*\"$" | sed -s 's/"//g' )
+	echo uuid is "$uuid"
+fi
 while true
 do
 	runCheck=$( curl https://api.hypixel.net/status?key="$key"\&uuid="$uuid" )
-	# parse the variable for '"online":true'
+	echo "$runCheck"
 	isOnline=$( echo "$runCheck" | grep -o "\"online\":true")
 	if [ "$isOnline" != "" ]
 	then
@@ -19,15 +29,14 @@ do
 			playerStatus=online
 			curl https://api.telegram.org/bot"$TGbotAPIkey"/sendMessage?chat_id="$TGbotChannel"\&text="$tgMSG"
 		fi
+		#playerStatus=offline
 	else
 		if [ "$playerStatus" != 'offline' ]
 		then
 			playerStatus=offline
 			tgMSG=$( echo "$playerName" has left )
-			# send the message
 			curl https://api.telegram.org/bot"$TGbotAPIkey"/sendMessage?chat_id="$TGbotChannel"\&text="$tgMSG"
 		fi
 	fi
-	# wait 32 seconds before the check happens again
 	sleep 32
 done
