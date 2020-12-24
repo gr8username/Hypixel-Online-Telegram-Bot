@@ -21,7 +21,7 @@ Obtaining the Telegram API key, instructions can be found on [https://core.teleg
 
 Once the API key for the bot has been obtained, you must send the bot a message and figure out the chat ID. This can usually be obtained by making a GET request to ```https://api.telegram.org/bot<API-KEY>/getUpdates``` and finding the chat id section of the json for the message you previously sent to the bot. You can also open the url (**with the Telegram api key filled in**) with a web browser
 
-Then figure out the uuid of the player this can be done most easily with [NameMC](https://namemc.com), remove any ```-``` ( it should look something like this ```069a79f444e94726a5befca90e38aaf5```) from the uuid, and then then change ```uuid=```.
+~~~ Then figure out the uuid of the player this can be done most easily with [NameMC](https://namemc.com), remove any ```-``` ( it should look something like this ```069a79f444e94726a5befca90e38aaf5```) from the uuid, and then then change ```uuid=```.~~~ It is now no longer required to fill in a uuid, make sure ```userUsername=true``` and fill in ```playerName=```
 
 This repository is avaliabe on both GitHub and GitLab.
 
