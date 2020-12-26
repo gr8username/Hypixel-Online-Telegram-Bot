@@ -11,6 +11,8 @@ TGbotChannel='TELEGRAM-CHAT-CHANNEL-NUMBER'
 # Telegram chat channel
 for index in ${!playerName[*]}
 do
+	# short delay between pulling uuid info (prevents issues with Mojang API)
+	sleep 2.5
 	echo player is ${playerName[$index]}
 	playerUUID[$index]=$( curl https://api.mojang.com/users/profiles/minecraft/${playerName[$index]}?at=0 | grep -o "\"id\":\"[a-z0-9]*\"" | grep -o "\"[a-z0-9]*\"$" | sed -s 's/"//g' )
 	if [ "${playerUUID[$index]}" = "" ]
