@@ -15,12 +15,12 @@ do
 	sleep 2.5
 	echo player is ${playerName[$index]}
 	playerUUID[$index]=$( curl https://api.mojang.com/users/profiles/minecraft/${playerName[$index]}?at=0 | grep -o "\"id\":\"[a-z0-9]*\"" | grep -o "\"[a-z0-9]*\"$" | sed -s 's/"//g' )
+	echo uuid for "${playerName[$index]}" is "${playerUUID[$index]}"
 	if [ "${playerUUID[$index]}" = "" ]
 	then
 		echo Player "${playerName[$index]}" does not exist
 		tgMSG=$( echo Player "${playerName[$index]}" does not exist, have they changed their name? view name history for "${playerName[$index]}" at https://namemc.com/search?q="${playerName[$index]}" )
 		curl https://api.telegram.org/bot"$TGbotAPIkey"/sendMessage?chat_id="$TGbotChannel"\&text="$tgMSG"
-		echo uuid for "${playerName[$index]}" is "${playerUUID[$index]}"
 	fi
 done
 while true
